@@ -127,30 +127,218 @@
   }
 }
 
-/* ---------- Planning tips ---------- */
-.tawang-tips {
+/* ---------- Route section labels ---------- */
+.tawang-route-label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-1);
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(90, 114, 71, 0.2);
+}
+
+.tawang-route-label:first-of-type {
+  margin-top: var(--space-2);
+}
+
+/* ---------- Best time to visit ---------- */
+.best-time-intro {
+  max-width: 760px;
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.best-time-intro p {
+  color: var(--text-soft);
+}
+
+.season-table-wrap {
+  max-width: 720px;
+  margin: 0 auto var(--space-5);
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.season-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.98rem;
+}
+
+.season-table th,
+.season-table td {
+  padding: 14px 20px;
+  text-align: left;
+}
+
+.season-table thead th {
+  background: var(--forest);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.season-table tbody tr {
+  border-bottom: 1px solid rgba(44, 36, 22, 0.08);
+  transition: background-color var(--transition);
+}
+
+.season-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.season-table tbody tr:hover {
+  background: var(--sage);
+}
+
+.season-table td {
+  color: var(--text-soft);
+}
+
+.season-table td:first-child {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Responsive table */
+@media (max-width: 599px) {
+  .season-table thead {
+    display: none;
+  }
+  .season-table,
+  .season-table tbody,
+  .season-table tr,
+  .season-table td {
+    display: block;
+    width: 100%;
+  }
+  .season-table tr {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(44, 36, 22, 0.08);
+  }
+  .season-table td {
+    padding: 4px 0;
+    text-align: right;
+    position: relative;
+  }
+  .season-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--text);
+  }
+}
+
+.season-details {
   display: grid;
   gap: var(--space-3);
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.tawang-tip h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tawang-tip svg {
-  color: var(--olive);
-  flex-shrink: 0;
-}
-
-.tawang-tip p {
-  color: var(--text-soft);
-  font-size: 0.97rem;
-}
-
-@media (min-width: 900px) {
-  .tawang-tips {
+@media (min-width: 768px) {
+  .season-details {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.season-detail {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-3);
+}
+
+.season-detail h3 {
+  margin-bottom: var(--space-1);
+}
+
+.season-detail p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ---------- ILP / PAP two-column ---------- */
+.ilp-grid {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ilp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ilp-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  border-top: 4px solid var(--forest);
+}
+
+.ilp-card:nth-child(2) {
+  border-top-color: var(--terracotta);
+}
+
+.ilp-card__title {
+  margin-bottom: var(--space-3);
+}
+
+.ilp-card__list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ilp-card__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid rgba(44, 36, 22, 0.08);
+}
+
+.ilp-card__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ilp-card__item dt {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.ilp-card__item dd {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ilp-card__note {
+  margin-top: var(--space-3);
+  padding: var(--space-2);
+  background: var(--sage);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text-soft);
 }
