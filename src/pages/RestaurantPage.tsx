@@ -5,7 +5,7 @@ import { useAsync } from "../hooks/useAsync";
 import { useBookingSearch } from "../hooks/useBookingSearch";
 import { RestaurantBookingModal } from "../components/RestaurantBookingModal";
 import { images } from "../data/images";
-import { policies, site } from "../data/site";
+import { policies } from "../data/site";
 import { todayISO } from "../utils/format";
 import type { RestaurantSlot } from "../api/types";
 import "./RestaurantPage.css";
@@ -56,13 +56,10 @@ export default function RestaurantPage() {
 
       <section className="section" style={{ paddingTop: "var(--space-4)" }}>
         <div className="container rest-grid">
-          <div
-            className="rest-photo"
-            aria-label="Placeholder — restaurant interior image"
-          >
+          <div className="rest-photo" aria-label="Dining buffet">
             <img
               src={images.restaurant.interior}
-              alt="Placeholder — here should be a restaurant interior image"
+              alt="A freshly prepared buffet spread in the dining room"
               loading="lazy"
               width="940"
               height="650"

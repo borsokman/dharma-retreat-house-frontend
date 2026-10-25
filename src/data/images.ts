@@ -48,7 +48,7 @@ export const images = {
     standardTwin: "/rooms/standard-twin.jpg",
   },
   restaurant: {
-    interior: PLACEHOLDER,
+    interior: "/buffet/dining-buffet.jpg",
     tableSetting: PLACEHOLDER,
     candles: PLACEHOLDER,
     wine: PLACEHOLDER,
