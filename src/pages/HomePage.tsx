@@ -1,32 +1,94 @@
 import { Link } from "react-router-dom";
-import { Wifi, Tv, Coffee, ParkingSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BookingWidget } from "../components/BookingWidget";
 import { images } from "../data/images";
 import { site } from "../data/site";
 import "./HomePage.css";
 
-const amenities = [
+type NavigationCard = {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  to?: string;
+};
+
+const navigationCards: NavigationCard[] = [
   {
-    icon: Wifi,
-    title: "High-Speed Wi-Fi",
-    body: "Complimentary high-speed internet throughout all guest rooms & lounge areas.",
+    title: "Rooms & Suites",
+    description: "Rest well in a quiet room surrounded by mountain air.",
+    image: images.rooms.luxurySuite,
+    alt: "Luxury suite at Dharma Retreat House",
+    to: "/stay",
   },
   {
-    icon: Tv,
-    title: '55" Google TV',
-    body: "In-room smart streaming entertainment for relaxing mountain evenings.",
+    title: "Buffet",
+    description: "Enjoy generous, home-style food prepared with care.",
+    image: images.buffet.interior,
+    alt: "Freshly prepared buffet at Dharma Retreat House",
+    to: "/buffet",
   },
   {
-    icon: Coffee,
-    title: "Home-Style Breakfast",
-    body: "Delicious hot, complimentary home-style breakfast prepared fresh daily.",
+    title: "Explore Tawang",
+    description: "Discover monasteries, lakes, waterfalls and high passes.",
+    image: images.tawang.hero,
+    alt: "Mountain landscape in Tawang",
+    to: "/tawang",
   },
   {
-    icon: ParkingSquare,
-    title: "Private Guest Parking",
-    body: "Ample, safe, and convenient private vehicle parking on premises.",
+    title: "Dharma Coffee House",
+    description: "A warm place for coffee, conversation and quiet moments.",
+    image: images.gallery.gardenPath,
+    alt: "Placeholder image for Dharma Coffee House",
+  },
+  {
+    title: "Gallery",
+    description: "Take a glimpse at the house and the landscape around it.",
+    image: images.gallery.monastery,
+    alt: "Placeholder image for the gallery",
+    to: "/gallery",
+  },
+  {
+    title: "Our Mission",
+    description: "See how every stay helps support Tashol Tengyur School.",
+    image: images.mission.classroom,
+    alt: "Placeholder image for the school mission",
+    to: "/our-mission",
   },
 ];
+
+const reviewsUrl =
+  "https://www.google.com/maps/place/Dharma+Retreat+House/@27.594589,91.8584247,17z/data=!4m12!3m11!1s0x375cf5c9ed88412b:0xd486e28ff3387c18!5m3!1s2026-10-26!4m1!1i2!8m2!3d27.594589!4d91.8609996!9m1!1b1!16s%2Fg%2F11yvds_jj7?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D";
+
+function NavigationCardView({ card }: { card: NavigationCard }) {
+  const content = (
+    <>
+      <div className="home-nav-card__image">
+        <img src={card.image} alt={card.alt} loading="lazy" width="940" height="650" />
+      </div>
+      <div className="home-nav-card__body">
+        <h2>{card.title}</h2>
+        <p>{card.description}</p>
+        {card.to ? (
+          <span className="home-nav-card__action">
+            Explore <ArrowRight size={16} aria-hidden="true" />
+          </span>
+        ) : (
+          <span className="home-nav-card__coming-soon">Coming soon</span>
+        )}
+      </div>
+    </>
+  );
+
+  return card.to ? (
+    <Link to={card.to} className="home-nav-card card card--hover">
+      {content}
+    </Link>
+  ) : (
+    <article className="home-nav-card card home-nav-card--coming-soon">{content}</article>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -55,36 +117,33 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      /* Put the navigation grid card here */
-      {/* ---------- Amenities ---------- */}
-      <section className="section" aria-labelledby="amenities-title">
+
+      {/* ---------- Navigation cards ---------- */}
+      <section className="section home-navigation" aria-labelledby="home-navigation-title">
         <div className="container">
           <div className="section-head section-head--center">
-            <span className="eyebrow">Homestay comforts</span>
-            <h2 id="amenities-title">Homestay Comforts &amp; Amenities</h2>
+            <span className="eyebrow">Welcome to Dharma</span>
+            <h2 id="home-navigation-title">Find your way around</h2>
             <p className="lede">
-              Everything you need for an easy, restful mountain stay.
+              Stay, eat, explore and discover the purpose behind the house.
             </p>
           </div>
-          <div className="amenities">
-            {amenities.map((a) => (
-              <article key={a.title} className="card card--hover amenity">
-                <a.icon size={26} aria-hidden="true" />
-                <h3>{a.title}</h3>
-                <p>{a.body}</p>
-              </article>
+          <div className="home-nav-grid">
+            {navigationCards.map((card) => (
+              <NavigationCardView key={card.title} card={card} />
             ))}
           </div>
         </div>
       </section>
+
       {/* ---------- Testimonials ---------- */}
-      <section className="section" aria-labelledby="quotes-title">
+      <section className="section section--sage" aria-labelledby="quotes-title">
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Guest words</span>
             <h2 id="quotes-title">What guests say</h2>
             <p className="lede">
-              Placeholder testimonials — replace with real guest feedback.
+              Read more experiences from guests who have stayed with us.
             </p>
           </div>
           <div className="quotes">
@@ -114,10 +173,21 @@ export default function HomePage() {
               <figcaption>Rinchin Jangmu, India</figcaption>
             </figure>
           </div>
+          <div className="text-center home-reviews__link">
+            <a
+              className="btn btn--primary"
+              href={reviewsUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read all Google reviews <ArrowRight size={16} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
+
       {/* ---------- Contact CTA ---------- */}
-      <section className="section section--sage" aria-labelledby="cta-title">
+      <section className="section" aria-labelledby="cta-title">
         <div className="container text-center">
           <h2 id="cta-title">Come and stay</h2>
           <p className="lede" style={{ maxWidth: 560, margin: "0 auto 24px" }}>

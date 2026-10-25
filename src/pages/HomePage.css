@@ -78,228 +78,105 @@
   }
 }
 
-/* ---------- Tawang teaser ---------- */
-.tawang-teaser {
-  position: relative;
-  min-height: 72svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
+/* ---------- Navigation cards ---------- */
+.home-navigation {
+  background: var(--cream);
 }
 
-.tawang-teaser__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.tawang-teaser__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(16, 24, 30, 0.55),
-    rgba(16, 24, 30, 0.35) 50%,
-    rgba(16, 24, 30, 0.6)
-  );
-}
-
-.tawang-teaser__content {
-  position: relative;
-  z-index: 2;
-  padding: var(--space-6) 0;
-}
-
-.tawang-teaser__eyebrow {
-  color: rgba(249, 246, 240, 0.85);
-}
-
-.tawang-teaser__content h2 {
-  color: #f9f6f0;
-  text-shadow: 0 2px 20px rgba(16, 24, 30, 0.55);
-  margin-bottom: var(--space-2);
-}
-
-.tawang-teaser__lede {
-  color: rgba(249, 246, 240, 0.92);
-  max-width: 54ch;
-  margin: 0 auto var(--space-3);
-  font-size: 1.08rem;
-}
-
-/* ---------- Intro ---------- */
-.intro {
-  position: relative;
-  overflow: visible;
-}
-
-.intro__blob {
-  width: 340px;
-  height: 340px;
-  right: -120px;
-  top: -80px;
-  border-radius: 50% 30% 70% 40%;
-  opacity: 0.8;
-}
-
-/* ---------- Featured rooms ---------- */
-.home-rooms {
+.home-nav-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-3);
 }
 
-.home-room {
+.home-nav-card {
   display: block;
-  padding: 0;
   overflow: hidden;
+  padding: 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.home-nav-card:hover {
   color: var(--text);
 }
 
-.home-room:hover {
-  color: var(--text);
-}
-
-.home-room__img {
+.home-nav-card__image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 40% 40% / var(--radius-lg)
-    var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  background: var(--sage);
 }
 
-.home-room__img img {
+.home-nav-card__image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 600ms var(--ease-organic);
 }
 
-.home-room:hover .home-room__img img {
+.home-nav-card:hover .home-nav-card__image img {
   transform: scale(1.05);
 }
 
-.home-room__body {
+.home-nav-card__body {
   padding: var(--space-3);
 }
 
-.home-room__price {
+.home-nav-card__body h2 {
+  font-size: 1.45rem;
+  margin-bottom: 8px;
+}
+
+.home-nav-card__body p {
+  min-height: 48px;
+  color: var(--text-soft);
+  margin: 0 0 var(--space-2);
+}
+
+.home-nav-card__action,
+.home-nav-card__coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--forest);
   font-weight: 800;
+  font-size: 0.92rem;
 }
 
-@media (min-width: 860px) {
-  .home-rooms {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.home-nav-card__action svg {
+  transition: transform var(--transition);
 }
 
-/* ---------- Amenities ---------- */
-.amenities {
-  display: grid;
-  gap: var(--space-3);
+.home-nav-card:hover .home-nav-card__action svg {
+  transform: translateX(4px);
 }
 
-.amenity {
-  text-align: center;
-  padding: var(--space-4) var(--space-3);
+.home-nav-card__coming-soon {
+  color: var(--text-faint);
 }
 
-.amenity svg {
-  color: var(--olive);
-  margin-bottom: var(--space-2);
-}
-
-.amenity h3 {
-  font-size: 1.12rem;
-  margin-bottom: 6px;
-}
-
-.amenity p {
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  margin: 0;
+.home-nav-card--coming-soon {
+  cursor: default;
 }
 
 @media (min-width: 700px) {
-  .amenities {
+  .home-nav-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1020px) {
-  .amenities {
-    grid-template-columns: repeat(4, 1fr);
+  .home-nav-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ---------- Buffet overview ---------- */
-.rest-overview {
-  display: grid;
-  gap: var(--space-4);
-  align-items: center;
+/* ---------- Reviews ---------- */
+.home-reviews__link {
+  margin-top: var(--space-4);
 }
 
-.rest-overview__img {
-  border-radius: 50% 40% 55% 45% / 45% 55% 40% 50%;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 3;
-}
-
-.rest-overview__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.rest-overview__body h2 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-@media (min-width: 860px) {
-  .rest-overview {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---------- Mission teaser ---------- */
-.mission-teaser {
-  display: grid;
-  gap: var(--space-4);
-  align-items: center;
-}
-
-.mission-teaser__img {
-  border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 3;
-}
-
-.mission-teaser__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.mission-teaser h2 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-@media (min-width: 860px) {
-  .mission-teaser {
-    grid-template-columns: 1.2fr 1fr;
-  }
-}
-
-/* ---------- Quotes ---------- */
 .quotes {
   display: grid;
   gap: var(--space-3);

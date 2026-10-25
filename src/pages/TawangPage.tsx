@@ -419,10 +419,21 @@ export default function TawangPage() {
             <h2>Best time to visit Tawang</h2>
           </div>
 
-          <div className="best-time-intro">
-            {bestTimeParagraphs.map((p) => (
-              <p key={p.slice(0, 24)}>{p}</p>
-            ))}
+          <div className="best-time-layout">
+            <div className="best-time-image">
+              <img
+                src={images.tawang.bestTime}
+                alt="Scenic Tawang landscape showing the best season to visit"
+                loading="lazy"
+                width="940"
+                height="650"
+              />
+            </div>
+            <div className="best-time-intro">
+              {bestTimeParagraphs.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
           </div>
 
           <div className="season-table-wrap">
