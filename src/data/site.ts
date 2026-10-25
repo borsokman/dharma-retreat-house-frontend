@@ -21,8 +21,8 @@ export const site = {
 export const navLinks = [
   { label: "Home", to: "/" },
   { label: "Rooms & Suites", to: "/stay" },
-  { label: "Restaurant", to: "/restaurant" },
-  { label: "Tawang", to: "/tawang" },
+  { label: "Buffet", to: "/buffet" },
+  { label: "Explore Tawang", to: "/tawang" },
   { label: "Our Mission", to: "/our-mission" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
@@ -33,6 +33,6 @@ export const policies = {
     "Free cancellation up to 48 hours before check-in. Cancellations within 48 hours of check-in are charged the first night. No-shows are charged the full stay.",
   checkIn: "Check-in from 14:00",
   checkOut: "Check-out until 11:00",
-  restaurantCancellation:
+  buffetCancellation:
     "Tables are held for 15 minutes past the reservation time. Cancel any time up to 2 hours before your reservation.",
 };

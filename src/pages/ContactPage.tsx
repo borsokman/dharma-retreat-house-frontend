@@ -20,8 +20,8 @@ export default function ContactPage() {
           <span className="eyebrow">Contact</span>
           <h1>We'd love to hear from you</h1>
           <p className="lede">
-            Questions about a stay, the restaurant or the school — write, call
-            or visit.
+            Questions about a stay, the buffet or the school — write, call or
+            visit.
           </p>
         </div>
       </section>
@@ -62,7 +62,10 @@ export default function ContactPage() {
                 loading="lazy"
               />
             ) : (
-              <div className="contact-map contact-map--placeholder" aria-label="Map placeholder">
+              <div
+                className="contact-map contact-map--placeholder"
+                aria-label="Map placeholder"
+              >
                 Map placeholder — embed the property's location here.
               </div>
             )}
@@ -75,7 +78,7 @@ export default function ContactPage() {
               {policies.checkIn} · {policies.checkOut}
             </p>
             <p className="lede">
-              <strong>Restaurant:</strong> {policies.restaurantCancellation}
+              <strong>Buffet:</strong> {policies.buffetCancellation}
             </p>
           </div>
 
@@ -83,7 +86,11 @@ export default function ContactPage() {
             <h3>Send a message</h3>
             {sent ? (
               <div className="text-center" role="status">
-                <CheckCircle2 size={44} color="var(--forest)" aria-hidden="true" />
+                <CheckCircle2
+                  size={44}
+                  color="var(--forest)"
+                  aria-hidden="true"
+                />
                 <p className="lede mt-2">
                   Thank you — your message has been noted. (Once the backend is
                   connected, this form will email the house directly.)
@@ -99,7 +106,9 @@ export default function ContactPage() {
                     required
                     autoComplete="name"
                     value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, name: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="field">
@@ -111,7 +120,9 @@ export default function ContactPage() {
                     required
                     autoComplete="email"
                     value={form.email}
-                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, email: e.target.value }))
+                    }
                   />
                 </div>
                 <div className="field">
@@ -122,7 +133,9 @@ export default function ContactPage() {
                     rows={5}
                     required
                     value={form.message}
-                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, message: e.target.value }))
+                    }
                   />
                 </div>
                 <button type="submit" className="btn btn--primary btn--block">

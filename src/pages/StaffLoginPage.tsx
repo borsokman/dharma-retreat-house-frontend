@@ -36,7 +36,7 @@ export default function StaffLoginPage() {
         <p className="eyebrow">Staff area</p>
         <h1>Staff sign-in</h1>
         <p className="lede">
-          For hotel and restaurant employees only. Access is verified by the
+          For hotel and buffet employees only. Access is verified by the
           backend.
         </p>
         <div className="field">

@@ -1,9 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2 } from "lucide-react";
-import type {
-  RestaurantBooking,
-  RestaurantSlot,
-} from "../api/types";
+import type { BuffetBooking, BuffetSlot } from "../api/types";
 import { api, isMockMode } from "../api/client";
 import { useAsync } from "../hooks/useAsync";
 import { Modal } from "./Modal";
@@ -12,12 +9,12 @@ import { formatDateLong } from "../utils/format";
 interface Props {
   date: string;
   partySize: number;
-  slots: RestaurantSlot[];
+  slots: BuffetSlot[];
   onClose: () => void;
 }
 
-export function RestaurantBookingModal({ date, partySize, slots, onClose }: Props) {
-  const { state, run } = useAsync<RestaurantBooking>();
+export function BuffetBookingModal({ date, partySize, slots, onClose }: Props) {
+  const { state, run } = useAsync<BuffetBooking>();
   const [time, setTime] = useState<string | null>(null);
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const [requests, setRequests] = useState("");
@@ -26,7 +23,7 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
     e.preventDefault();
     if (!time) return;
     void run(() =>
-      api.createRestaurantBooking({
+      api.createBuffetBooking({
         date,
         time,
         partySize,
@@ -36,7 +33,11 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
     );
   }
 
-  const invalid = !time || !contact.name.trim() || !/^\S+@\S+\.\S+$/.test(contact.email) || !contact.phone.trim();
+  const invalid =
+    !time ||
+    !contact.name.trim() ||
+    !/^\S+@\S+\.\S+$/.test(contact.email) ||
+    !contact.phone.trim();
   const openSlots = slots.filter((s) => s.available);
 
   return (
@@ -66,7 +67,8 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
             <div>
               <dt>Party</dt>
               <dd>
-                {state.data.partySize} {state.data.partySize === 1 ? "guest" : "guests"}
+                {state.data.partySize}{" "}
+                {state.data.partySize === 1 ? "guest" : "guests"}
               </dd>
             </div>
           </dl>
@@ -114,7 +116,9 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
               required
               autoComplete="name"
               value={contact.name}
-              onChange={(e) => setContact((c) => ({ ...c, name: e.target.value }))}
+              onChange={(e) =>
+                setContact((c) => ({ ...c, name: e.target.value }))
+              }
             />
           </div>
           <div className="field">
@@ -126,7 +130,9 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
               required
               autoComplete="email"
               value={contact.email}
-              onChange={(e) => setContact((c) => ({ ...c, email: e.target.value }))}
+              onChange={(e) =>
+                setContact((c) => ({ ...c, email: e.target.value }))
+              }
             />
           </div>
           <div className="field">
@@ -138,7 +144,9 @@ export function RestaurantBookingModal({ date, partySize, slots, onClose }: Prop
               required
               autoComplete="tel"
               value={contact.phone}
-              onChange={(e) => setContact((c) => ({ ...c, phone: e.target.value }))}
+              onChange={(e) =>
+                setContact((c) => ({ ...c, phone: e.target.value }))
+              }
             />
           </div>
           <div className="field">

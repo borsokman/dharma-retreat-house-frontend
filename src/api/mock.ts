@@ -3,10 +3,10 @@ import type {
   AvailabilityQuery,
   HotelBooking,
   HotelBookingRequest,
-  RestaurantAvailabilityQuery,
-  RestaurantBooking,
-  RestaurantBookingRequest,
-  RestaurantSlot,
+  BuffetAvailabilityQuery,
+  BuffetBooking,
+  BuffetBookingRequest,
+  BuffetSlot,
   RoomAvailability,
   RoomType,
 } from "./types";
@@ -58,7 +58,10 @@ function makeTaxesAndFees(base: number, nights: number) {
   const roomTotal = base * nights;
   return [
     { label: "City tax", amount: Math.round(roomTotal * 0.03 * 100) / 100 },
-    { label: "Service charge", amount: Math.round(roomTotal * 0.05 * 100) / 100 },
+    {
+      label: "Service charge",
+      amount: Math.round(roomTotal * 0.05 * 100) / 100,
+    },
   ];
 }
 
@@ -144,10 +147,19 @@ export const mockApiClient: ApiClient = {
     );
   },
 
-  getRestaurantSlots(
-    query: RestaurantAvailabilityQuery,
-  ): Promise<RestaurantSlot[]> {
-    const times = ["12:00", "12:30", "13:00", "13:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"];
+  getBuffetSlots(query: BuffetAvailabilityQuery): Promise<BuffetSlot[]> {
+    const times = [
+      "12:00",
+      "12:30",
+      "13:00",
+      "13:30",
+      "18:00",
+      "18:30",
+      "19:00",
+      "19:30",
+      "20:00",
+      "20:30",
+    ];
     return delay(
       times.map((time) => ({
         time,
@@ -156,9 +168,7 @@ export const mockApiClient: ApiClient = {
     );
   },
 
-  async createRestaurantBooking(
-    req: RestaurantBookingRequest,
-  ): Promise<RestaurantBooking> {
+  async createBuffetBooking(req: BuffetBookingRequest): Promise<BuffetBooking> {
     return delay({
       reference: reference("RST"),
       status: "confirmed",

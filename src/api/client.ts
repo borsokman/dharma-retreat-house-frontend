@@ -24,10 +24,7 @@ class ApiRequestError extends Error {
   }
 }
 
-async function request<T>(
-  path: string,
-  options: RequestInit = {},
-): Promise<T> {
+async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   let res: Response;
   try {
     res = await fetch(`${BASE_URL}${path}`, {
@@ -79,12 +76,12 @@ export const httpApiClient: ApiClient = {
       method: "POST",
       body: JSON.stringify({ reference: ref, token }),
     }),
-  getRestaurantSlots: (query) =>
+  getBuffetSlots: (query) =>
     request(
-      `/restaurant/availability?date=${query.date}&party_size=${query.partySize}`,
+      `/buffet/availability?date=${query.date}&party_size=${query.partySize}`,
     ),
-  createRestaurantBooking: (req) =>
-    request("/restaurant/bookings", {
+  createBuffetBooking: (req) =>
+    request("/buffet/bookings", {
       method: "POST",
       body: JSON.stringify({
         date: req.date,

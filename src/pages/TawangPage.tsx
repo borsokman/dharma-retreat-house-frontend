@@ -19,7 +19,7 @@ const introBlocks: {
       "Tawang in Arunachal Pradesh, located in the north-eastern part of India bordering Tibet in the north and Bhutan in the south-west, is praised by all as the unexplored beauty of the North-East with majestic mountain peaks, lakes, forests and waterfalls.",
       "It is one of the most beautiful places in India, ornamented with its rich cultures and traditions.",
     ],
-    image: images.tawang.welcomeGate,
+    image: images.tawang.map,
     alt: "Lush blue-green mountain ridges of Tawang under a dramatic cloudy sky",
     imageSide: "right",
     size: "medium",
@@ -80,7 +80,7 @@ const visitingPlaces: {
     image: images.tawang.monastery,
     alt: "Tawang Monastery",
     imageSide: "left",
-    size: "tall",
+    size: "medium",
   },
   {
     title: "Urgelling Gompa",
@@ -97,7 +97,6 @@ const visitingPlaces: {
     title: "Tawang War Memorial",
     paragraphs: [
       "Amidst the beautiful landscape of Tawang stands a solemn and historic site: the Tawang War Memorial. This stupa stands as a poignant testament to the brave Indian soldiers who laid down their lives during the 1962 Indo-China War. The imposing structure is adorned with names of the martyrs, their regiments, and inscriptions honouring their sacrifice.",
-      "Standing before the memorial, you will be transported back in time, understanding the courage and resilience of those who fought for their motherland. Surrounding the stupa are several flags flying high, including the National Flag, the Army Flag, the Air Force Flag, as well as the flags of the 27 other regiments that fought in the war. The memorial was built in memory of the 2,420 members of the armed forces who laid down their lives in the Kameng district during the war.",
     ],
     image: images.tawang.warMemorial,
     alt: "Tawang War Memorial",
@@ -291,7 +290,7 @@ const reachBlocks: {
     image: images.tawang.plainsDusk,
     alt: "Distant blue mountain ranges at dusk over a wide river plain",
     imageSide: "right",
-    size: "short",
+    size: "medium",
   },
   {
     title: "Guwahati to Tawang by helicopter",
@@ -301,7 +300,7 @@ const reachBlocks: {
     image: images.tawang.selaRoad,
     alt: "The winding road climbing toward Sela Pass under heavy clouds",
     imageSide: "left",
-    size: "short",
+    size: "medium",
   },
   {
     title: "Guwahati to Tawang by road",

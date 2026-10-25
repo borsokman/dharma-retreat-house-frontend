@@ -2,10 +2,10 @@ import type {
   AvailabilityQuery,
   HotelBooking,
   HotelBookingRequest,
-  RestaurantAvailabilityQuery,
-  RestaurantBooking,
-  RestaurantBookingRequest,
-  RestaurantSlot,
+  BuffetAvailabilityQuery,
+  BuffetBooking,
+  BuffetBookingRequest,
+  BuffetSlot,
   RoomAvailability,
   RoomType,
 } from "./types";
@@ -22,10 +22,6 @@ export interface ApiClient {
   createHotelBooking(req: HotelBookingRequest): Promise<HotelBooking>;
   getHotelBooking(reference: string, token: string): Promise<HotelBooking>;
   cancelHotelBooking(reference: string, token: string): Promise<HotelBooking>;
-  getRestaurantSlots(
-    query: RestaurantAvailabilityQuery,
-  ): Promise<RestaurantSlot[]>;
-  createRestaurantBooking(
-    req: RestaurantBookingRequest,
-  ): Promise<RestaurantBooking>;
+  getBuffetSlots(query: BuffetAvailabilityQuery): Promise<BuffetSlot[]>;
+  createBuffetBooking(req: BuffetBookingRequest): Promise<BuffetBooking>;
 }

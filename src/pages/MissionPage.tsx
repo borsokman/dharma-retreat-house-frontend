@@ -24,15 +24,14 @@ export default function MissionPage() {
               building
             </h2>
             <p className="lede">
-              {site.charityName} educates children from the surrounding
-              valleys. The school occupies this same building, and every part
-              of the hotel and restaurant — every room, every meal, every cup
-              of tea — contributes to its work.
+              {site.charityName} educates children from the surrounding valleys.
+              The school occupies this same building, and every part of the
+              hotel and buffet — every room, every meal, every cup of tea —
+              contributes to its work.
             </p>
             <p className="lede">
-              [Replace this paragraph with the foundation's own description:
-              who it serves, how it teaches, and what your support makes
-              possible.]
+              [Replace this paragraph with the foundation's own description: who
+              it serves, how it teaches, and what your support makes possible.]
             </p>
           </div>
           <div className="mission-page__img">
@@ -63,9 +62,16 @@ export default function MissionPage() {
               <Sprout size={22} aria-hidden="true" /> How your stay helps
             </h2>
             <ul className="mission-list">
-              <li>Your room rate funds teachers, books and classroom materials.</li>
-              <li>Every restaurant meal supports the school's daily meal program.</li>
-              <li>The building itself is shared — guests and pupils under one roof.</li>
+              <li>
+                Your room rate funds teachers, books and classroom materials.
+              </li>
+              <li>
+                Every buffet meal supports the school's daily meal program.
+              </li>
+              <li>
+                The building itself is shared — guests and pupils under one
+                roof.
+              </li>
             </ul>
             <p className="lede">
               [Replace these points with the foundation's actual programs and
@@ -85,7 +91,7 @@ export default function MissionPage() {
           <Link to="/stay" className="btn btn--primary">
             Book a room
           </Link>{" "}
-          <Link to="/restaurant" className="btn btn--ghost">
+          <Link to="/buffet" className="btn btn--ghost">
             Reserve a table
           </Link>
         </div>

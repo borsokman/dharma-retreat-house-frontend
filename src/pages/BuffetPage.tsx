@@ -3,12 +3,12 @@ import { Clock, Leaf, Users, UtensilsCrossed } from "lucide-react";
 import { api, isMockMode } from "../api/client";
 import { useAsync } from "../hooks/useAsync";
 import { useBookingSearch } from "../hooks/useBookingSearch";
-import { RestaurantBookingModal } from "../components/RestaurantBookingModal";
+import { BuffetBookingModal } from "../components/BuffetBookingModal";
 import { images } from "../data/images";
 import { policies } from "../data/site";
 import { todayISO } from "../utils/format";
-import type { RestaurantSlot } from "../api/types";
-import "./RestaurantPage.css";
+import type { BuffetSlot } from "../api/types";
+import "./BuffetPage.css";
 
 const menuHighlights = [
   {
@@ -27,16 +27,16 @@ const menuHighlights = [
   },
 ];
 
-export default function RestaurantPage() {
+export default function BuffetPage() {
   const { search } = useBookingSearch();
-  const { state, run } = useAsync<RestaurantSlot[]>();
+  const { state, run } = useAsync<BuffetSlot[]>();
   const [date, setDate] = useState(search.date || todayISO(1));
   const [partySize, setPartySize] = useState(search.partySize);
   const [time, setTime] = useState(search.time);
   const [modalOpen, setModalOpen] = useState(false);
 
   async function findSlots() {
-    await run(() => api.getRestaurantSlots({ date, partySize }));
+    await run(() => api.getBuffetSlots({ date, partySize }));
   }
 
   const slots = state.kind === "done" ? state.data : null;
@@ -46,7 +46,7 @@ export default function RestaurantPage() {
     <>
       <section className="page-head">
         <div className="container">
-          <span className="eyebrow">The restaurant</span>
+          <span className="eyebrow">The buffet</span>
           <h1>Good food, good purpose</h1>
           <p className="lede">
             Seasonal, locally sourced dishes served in our relaxed dining room.
@@ -58,7 +58,7 @@ export default function RestaurantPage() {
         <div className="container rest-grid">
           <div className="rest-photo" aria-label="Dining buffet">
             <img
-              src={images.restaurant.interior}
+              src={images.buffet.interior}
               alt="A freshly prepared buffet spread in the dining room"
               loading="lazy"
               width="940"
@@ -86,7 +86,7 @@ export default function RestaurantPage() {
               <Clock size={16} aria-hidden="true" /> Served daily from 7:00 PM
               to 9:00 PM (Ground Floor Dining)
             </p>
-            <p className="rest-policy">{policies.restaurantCancellation}</p>
+            <p className="rest-policy">{policies.buffetCancellation}</p>
           </div>
         </div>
       </section>
@@ -239,7 +239,7 @@ export default function RestaurantPage() {
       </section>
 
       {modalOpen && slots && (
-        <RestaurantBookingModal
+        <BuffetBookingModal
           date={date}
           partySize={partySize}
           slots={slots}

@@ -14,6 +14,7 @@ export const images = {
   tawang: {
     hero: publicAsset("tawang/tawang-hero.jpg"),
     welcomeGate: publicAsset("tawang/tawang-welcome.jpg"),
+    map: publicAsset("tawang/tawang-map.jpg"),
     monks: publicAsset("tawang/monks.jpg"),
     town: publicAsset("tawang/tawang-town.jpg"),
     alcove: publicAsset("tawang/tawang-alcove.jpg"),
@@ -33,7 +34,7 @@ export const images = {
     sungesterLake: publicAsset("tawang/sangetsar-lake.jpg"),
     bumlaPass: publicAsset("tawang/bumla-pass.jpg"),
     monpaCulture: publicAsset("tawang/monpa-people.jpg"),
-    bestTime: PLACEHOLDER,
+    bestTime: publicAsset("tawang/tawang-best-time.jpg"),
   },
   rooms: {
     gardenDouble: PLACEHOLDER,
@@ -48,7 +49,7 @@ export const images = {
     standardKing: publicAsset("rooms/standard-king.jpg"),
     standardTwin: publicAsset("rooms/standard-twin.jpg"),
   },
-  restaurant: {
+  buffet: {
     interior: publicAsset("buffet/dining-buffet.jpg"),
     tableSetting: PLACEHOLDER,
     candles: PLACEHOLDER,

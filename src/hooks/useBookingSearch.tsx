@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import type { AvailabilityQuery } from "../api/types";
 
-export type BookingTab = "stay" | "restaurant";
+export type BookingTab = "stay" | "buffet";
 
 interface SearchContext extends AvailabilityQuery {
   date: string;
@@ -20,7 +20,7 @@ interface BookingContextValue {
   search: SearchContext;
   update: (patch: Partial<SearchContext>) => void;
   goToStayResults: () => void;
-  goToRestaurant: () => void;
+  goToBuffet: () => void;
 }
 
 const defaultSearch: SearchContext = {
@@ -45,7 +45,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
       update: (patch) => setSearch((s) => ({ ...s, ...patch })),
       goToStayResults: () =>
         navigate("/stay", { state: { search: search as AvailabilityQuery } }),
-      goToRestaurant: () => navigate("/restaurant", { state: { search } }),
+      goToBuffet: () => navigate("/buffet", { state: { search } }),
     }),
     [search, navigate],
   );
@@ -57,6 +57,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
 
 export function useBookingSearch(): BookingContextValue {
   const ctx = useContext(BookingContext);
-  if (!ctx) throw new Error("useBookingSearch must be used inside BookingProvider");
+  if (!ctx)
+    throw new Error("useBookingSearch must be used inside BookingProvider");
   return ctx;
 }

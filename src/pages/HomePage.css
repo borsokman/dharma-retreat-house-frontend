@@ -27,11 +27,7 @@
       rgba(20, 24, 16, 0.25) 40%,
       rgba(20, 24, 16, 0.65) 100%
     ),
-    linear-gradient(
-      to right,
-      rgba(20, 24, 16, 0.45),
-      rgba(20, 24, 16, 0.1)
-    );
+    linear-gradient(to right, rgba(20, 24, 16, 0.45), rgba(20, 24, 16, 0.1));
 }
 
 .hero__content {
@@ -170,7 +166,8 @@
 .home-room__img {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 40% 40% / var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  border-radius: var(--radius-lg) var(--radius-lg) 40% 40% / var(--radius-lg)
+    var(--radius-lg) var(--radius-lg) var(--radius-lg);
 }
 
 .home-room__img img {
@@ -238,7 +235,7 @@
   }
 }
 
-/* ---------- Restaurant overview ---------- */
+/* ---------- Buffet overview ---------- */
 .rest-overview {
   display: grid;
   gap: var(--space-4);

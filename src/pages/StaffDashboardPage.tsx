@@ -6,7 +6,7 @@ import "./StaffDashboardPage.css";
 
 /**
  * Placeholder staff dashboard. The real dashboard will render today's
- * arrivals, departures and restaurant reservations from the backend's
+ * arrivals, departures and buffet reservations from the backend's
  * staff API, with search, filters, status management and check-in/out
  * controls. All authorization must be enforced server-side.
  */
@@ -55,12 +55,12 @@ export default function StaffDashboardPage() {
           </section>
           <section className="card" aria-labelledby="res-title">
             <h2 id="res-title">
-              <UtensilsCrossed size={20} aria-hidden="true" /> Restaurant
+              <UtensilsCrossed size={20} aria-hidden="true" /> buffet
               reservations
             </h2>
             <p className="lede">
-              Placeholder — will list today's tables with times, party sizes
-              and guest contact details.
+              Placeholder — will list today's tables with times, party sizes and
+              guest contact details.
             </p>
             <p className="badge badge--water">No live data yet</p>
           </section>
@@ -71,7 +71,9 @@ export default function StaffDashboardPage() {
           <ul className="staff-plan">
             <li>Secure staff sign-in enforced by the backend session</li>
             <li>Reservation list with search, filters and status editing</li>
-            <li>Check-in / check-out management with clear status indicators</li>
+            <li>
+              Check-in / check-out management with clear status indicators
+            </li>
             <li>Creating, editing and cancelling bookings and reservations</li>
             <li>Payment status overview (pending, paid, refunded)</li>
           </ul>

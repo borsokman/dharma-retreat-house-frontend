@@ -86,7 +86,7 @@
   .widget__fields {
     grid-template-columns: repeat(4, 1fr) auto;
   }
-  #panel-restaurant.widget__fields {
+  #panel-buffet.widget__fields {
     grid-template-columns: repeat(3, 1fr) auto;
   }
   .widget__submit {

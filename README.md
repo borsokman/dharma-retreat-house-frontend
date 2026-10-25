@@ -1,18 +1,18 @@
-# Dharma Retreat House — Hotel & Restaurant Booking Website
+# Dharma Retreat House — Hotel & buffet Booking Website
 
-A charity-operated hotel and restaurant website. All proceeds support the
+A charity-operated hotel and buffet website. All proceeds support the
 Tashol Tengyur School, located in the same building. Guests book rooms and
-restaurant tables online without creating an account.
+buffet tables online without creating an account.
 
 ## What's included
 
 - **Homepage** with a full-screen hero (real photo in `public/dharmahouse-hero.jpg`)
-  and a two-tab booking widget (Stay / Restaurant).
+  and a two-tab booking widget (Stay / buffet).
 - **Stay** — room listing with date-based availability and total prices
   (taxes shown when the backend supplies them).
 - **Room details** — gallery, amenities, per-date availability check and
   reservation flow.
-- **Restaurant** — menu highlights, slot search and reservation flow.
+- **buffet** — menu highlights, slot search and reservation flow.
 - **Our Mission**, **Gallery**, **Contact** — editable content with clearly
   marked placeholders.
 - **Manage booking** — account-free lookup and cancellation using a booking
@@ -25,7 +25,6 @@ restaurant tables online without creating an account.
 - React + TypeScript + Vite
 - React Router for navigation
 - A single, isolated API layer in `src/api/`:
-
   - `contract.ts` — the interface the Go backend must fulfill
   - `client.ts` — chooses the implementation based on `VITE_API_BASE_URL`;
     also contains the starting point of the real HTTP client
@@ -50,8 +49,8 @@ data.
 - `POST /api/v1/bookings` — create a hotel booking
 - `GET  /api/v1/bookings/{reference}` — booking details (secure token required)
 - `POST /api/v1/bookings/cancel` — cancel with a secure token
-- `GET  /api/v1/restaurant/availability` — available dining slots
-- `POST /api/v1/restaurant/bookings` — create a restaurant reservation
+- `GET  /api/v1/buffet/availability` — available dining slots
+- `POST /api/v1/buffet/bookings` — create a buffet reservation
 - `/api/v1/staff/*` — authenticated staff operations
 
 Adjust `src/api/client.ts` if the final routes or payload shapes differ —

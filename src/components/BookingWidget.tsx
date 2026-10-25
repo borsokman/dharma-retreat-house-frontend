@@ -1,11 +1,22 @@
 import { useState } from "react";
-import { BedDouble, CalendarDays, Clock, Search, Users, UtensilsCrossed } from "lucide-react";
+import {
+  BedDouble,
+  CalendarDays,
+  Clock,
+  Search,
+  Users,
+  UtensilsCrossed,
+} from "lucide-react";
 import { useBookingSearch, type BookingTab } from "../hooks/useBookingSearch";
 import { todayISO } from "../utils/format";
 import "./BookingWidget.css";
 
-export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline" }) {
-  const { search, update, goToStayResults, goToRestaurant } = useBookingSearch();
+export function BookingWidget({
+  variant = "hero",
+}: {
+  variant?: "hero" | "inline";
+}) {
+  const { search, update, goToStayResults, goToBuffet } = useBookingSearch();
   const [tab, setTab] = useState<BookingTab>("stay");
   const [error, setError] = useState<string | null>(null);
 
@@ -26,7 +37,7 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
     goToStayResults();
   }
 
-  function submitRestaurant() {
+  function submitBuffet() {
     if (!search.date) {
       setError("Please choose a reservation date.");
       return;
@@ -36,13 +47,17 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
       return;
     }
     setError(null);
-    goToRestaurant();
+    goToBuffet();
   }
 
   const today = todayISO();
 
   return (
-    <div className={`widget widget--${variant}`} role="search" aria-label="Booking search">
+    <div
+      className={`widget widget--${variant}`}
+      role="search"
+      aria-label="Booking search"
+    >
       <div className="widget__tabs" role="tablist" aria-label="Booking type">
         <button
           type="button"
@@ -59,14 +74,14 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
         <button
           type="button"
           role="tab"
-          aria-selected={tab === "restaurant"}
-          className={`widget__tab ${tab === "restaurant" ? "widget__tab--active" : ""}`}
+          aria-selected={tab === "buffet"}
+          className={`widget__tab ${tab === "buffet" ? "widget__tab--active" : ""}`}
           onClick={() => {
-            setTab("restaurant");
+            setTab("buffet");
             setError(null);
           }}
         >
-          <UtensilsCrossed size={18} aria-hidden="true" /> Restaurant
+          <UtensilsCrossed size={18} aria-hidden="true" /> Buffet
         </button>
       </div>
 
@@ -147,13 +162,17 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
                 ))}
               </select>
             </div>
-            <button type="button" className="btn btn--sunset widget__submit" onClick={submitStay}>
+            <button
+              type="button"
+              className="btn btn--sunset widget__submit"
+              onClick={submitStay}
+            >
               <Search size={18} aria-hidden="true" /> Search availability
             </button>
           </div>
         ) : (
           <div
-            id="panel-restaurant"
+            id="panel-buffet"
             role="tabpanel"
             aria-label="Table reservation search"
             className="widget__fields"
@@ -182,13 +201,22 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
                   value={search.time}
                   onChange={(e) => update({ time: e.target.value })}
                 >
-                  {["12:00", "12:30", "13:00", "13:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"].map(
-                    (t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ),
-                  )}
+                  {[
+                    "12:00",
+                    "12:30",
+                    "13:00",
+                    "13:30",
+                    "18:00",
+                    "18:30",
+                    "19:00",
+                    "19:30",
+                    "20:00",
+                    "20:30",
+                  ].map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
                 </select>
               </span>
             </div>
@@ -200,7 +228,9 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
                   id="w-party"
                   className="select"
                   value={search.partySize}
-                  onChange={(e) => update({ partySize: Number(e.target.value) })}
+                  onChange={(e) =>
+                    update({ partySize: Number(e.target.value) })
+                  }
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                     <option key={n} value={n}>
@@ -213,7 +243,7 @@ export function BookingWidget({ variant = "hero" }: { variant?: "hero" | "inline
             <button
               type="button"
               className="btn btn--sunset widget__submit"
-              onClick={submitRestaurant}
+              onClick={submitBuffet}
             >
               <Search size={18} aria-hidden="true" /> Find a table
             </button>

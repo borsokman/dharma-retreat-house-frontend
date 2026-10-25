@@ -65,17 +65,17 @@ export interface HotelBooking {
   paymentUrl?: string;
 }
 
-export interface RestaurantAvailabilityQuery {
+export interface BuffetAvailabilityQuery {
   date: string; // ISO yyyy-mm-dd
   partySize: number;
 }
 
-export interface RestaurantSlot {
+export interface BuffetSlot {
   time: string; // HH:mm
   available: boolean;
 }
 
-export interface RestaurantBookingRequest {
+export interface BuffetBookingRequest {
   date: string;
   time: string;
   partySize: number;
@@ -83,7 +83,7 @@ export interface RestaurantBookingRequest {
   specialRequests?: string;
 }
 
-export interface RestaurantBooking {
+export interface BuffetBooking {
   reference: string;
   status: "confirmed" | "cancelled";
   date: string;
