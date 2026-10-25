@@ -80,7 +80,7 @@ const visitingPlaces: {
     image: images.tawang.monastery,
     alt: "Tawang Monastery",
     imageSide: "left",
-    size: "medium",
+    size: "tall",
   },
   {
     title: "Urgelling Gompa",
