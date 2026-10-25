@@ -19,7 +19,7 @@ const introBlocks: {
       "Tawang in Arunachal Pradesh, located in the north-eastern part of India bordering Tibet in the north and Bhutan in the south-west, is praised by all as the unexplored beauty of the North-East with majestic mountain peaks, lakes, forests and waterfalls.",
       "It is one of the most beautiful places in India, ornamented with its rich cultures and traditions.",
     ],
-    image: images.tawang.hero,
+    image: images.tawang.welcomeGate,
     alt: "Lush blue-green mountain ridges of Tawang under a dramatic cloudy sky",
     imageSide: "right",
     size: "medium",
@@ -30,7 +30,7 @@ const introBlocks: {
       "Tawang is home to Tawang Monastery, the second largest Buddhist monastery in the world, founded by the great 5th Dalai Lama in the 17th century.",
       "It is also the birthplace of the 6th Dalai Lama and has been the birthplace of many great masters over the centuries.",
     ],
-    image: images.tawang.waterfall1,
+    image: images.tawang.monks,
     alt: "A powerful waterfall plunging down dark rocks in Tawang",
     imageSide: "left",
     size: "medium",
@@ -42,10 +42,20 @@ const introBlocks: {
       "Tawang is blessed with a number of monasteries, nunneries and stupas, which give it a very religious appearance, while at the same time there have been tremendous developments in infrastructure lately.",
       "In today's globalised world the people of Tawang, like many small traditional communities around the world, are facing challenges in preserving their distinctive identity while at the same time integrating into a global community.",
     ],
-    image: images.tawang.lake,
+    image: images.tawang.town,
     alt: "A calm lake framed by dense pine forest and prayer flags in Tawang",
     imageSide: "right",
     size: "tall",
+  },
+  {
+    title: "The Monpa People and Culture",
+    paragraphs: [
+      "The Monpas are one of the major tribes of Arunachal Pradesh. The Monpas are Buddhists by religion and Tawang Monastery is the fountainhead of their spiritual lives. They are by and large agriculturists and they have their own distinctive way of clothing themselves, well adapted to the conditions of their environment.",
+    ],
+    image: images.tawang.monpaCulture,
+    alt: "Monpa people in traditional attire",
+    imageSide: "left",
+    size: "medium",
   },
 ];
 
@@ -63,7 +73,9 @@ const visitingPlaces: {
   {
     title: "Tawang Monastery",
     paragraphs: [
-      "Placeholder text — a short description of Tawang Monastery will appear here.",
+      "Tawang Monastery is a Buddhist monastery located in Tawang, Arunachal Pradesh, India. It is the largest Buddhist monastery in the country. It is situated in the valley of the Tawang Chu, in close proximity to the Chinese and Bhutanese border.",
+      'Tawang Monastery is known in Tibetan as Gaden Namgyal Lhatse, which translates to "the divine paradise of complete victory". It was founded by Merak Lama Lodre Gyatso in 1680–1681 in accordance with the wishes of the 5th Dalai Lama, Ngawang Lobsang Gyatso. It belongs to the Gelug school of Vajrayana Buddhism and had a religious association with Drepung Monastery of Lhasa, which continued during the period of British rule.',
+      "The monastery is three stories high. It is enclosed by a 925 feet (282 m) long compound wall. Within the complex there are 65 residential buildings. The library of the monastery has valuable old scriptures, mainly Kangyur and Tengyur.",
     ],
     image: images.tawang.monastery,
     alt: "Tawang Monastery",
@@ -71,9 +83,10 @@ const visitingPlaces: {
     size: "medium",
   },
   {
-    title: "Urgeling Gompa",
+    title: "Urgelling Gompa",
     paragraphs: [
-      "Placeholder text — a short description of Urgeling Gompa will appear here.",
+      "Hidden amidst the quiet landscapes of Tawang in Arunachal Pradesh, Urgelling Gompa is a monastery of profound spiritual significance. Though small and modest compared to the grandeur of Tawang Monastery, it holds a revered place in Buddhist history as the birthplace of the 6th Dalai Lama, Tsangyang Gyatso (1683–1706).",
+      "This ancient monastery, believed to have been built in the 14th century, is a sanctuary of peace and devotion. Surrounded by prayer flags fluttering in the wind, its walls echo with centuries of faith and tradition. For travelers seeking to connect with authentic Tibetan Buddhist culture and enjoy moments of quiet reflection, Urgelling Gompa is an unmissable stop on an Arunachal Pradesh travel itinerary.",
     ],
     image: images.tawang.urgelingGompa,
     alt: "Urgeling Gompa",
@@ -83,7 +96,8 @@ const visitingPlaces: {
   {
     title: "Tawang War Memorial",
     paragraphs: [
-      "Placeholder text — a short description of the Tawang War Memorial will appear here.",
+      "Amidst the beautiful landscape of Tawang stands a solemn and historic site: the Tawang War Memorial. This stupa stands as a poignant testament to the brave Indian soldiers who laid down their lives during the 1962 Indo-China War. The imposing structure is adorned with names of the martyrs, their regiments, and inscriptions honouring their sacrifice.",
+      "Standing before the memorial, you will be transported back in time, understanding the courage and resilience of those who fought for their motherland. Surrounding the stupa are several flags flying high, including the National Flag, the Army Flag, the Air Force Flag, as well as the flags of the 27 other regiments that fought in the war. The memorial was built in memory of the 2,420 members of the armed forces who laid down their lives in the Kameng district during the war.",
     ],
     image: images.tawang.warMemorial,
     alt: "Tawang War Memorial",
@@ -94,17 +108,18 @@ const visitingPlaces: {
   {
     title: "Nuranang Waterfalls",
     paragraphs: [
-      "Placeholder text — a short description of Nuranang Waterfalls will appear here.",
+      "Nuranang Falls (also known as Jung Falls & Bong Bong Falls), 100 m high waterfall, is located 2 km northeast of the Jung town on the motorable Jung Falls Road in the Tawang district of Arunachal Pradesh state of India. Jung is 40 km southeast of Tawang, north of Sela Tunnel, and between Tawang and Bomdila on NH-13 Trans-Arunachal Highway. Jung Hydal Plant, near the base of fall, is a small hydel plant which generates electricity for local use.",
+      "The Nuranang river originates from the Northern slopes of the Sela Pass. Shortly after the waterfall it confluences with the Tawang river.",
     ],
     image: images.tawang.nuranang,
     alt: "Nuranang Waterfalls",
     imageSide: "right",
-    size: "medium",
+    size: "tall",
   },
   {
     title: "Jaswantgarh War Memorial",
     paragraphs: [
-      "Placeholder text — a short description of Jaswantgarh War Memorial will appear here.",
+      "The Eastern Himalayas are known for their breathtaking mountain landscapes, peaceful monasteries and remarkable stories of courage. Among the important historical landmarks in Arunachal Pradesh, Jaswantgarh War Memorial holds a special place. Located along the mountain highway leading to Tawang, this memorial honours Rifleman Jaswant Singh Rawat of the 4th Garhwal Rifles, remembered for his bravery during the 1962 Sino-Indian War.",
     ],
     image: images.tawang.jaswantgarh,
     alt: "Jaswantgarh War Memorial",
@@ -114,7 +129,8 @@ const visitingPlaces: {
   {
     title: "Sela Lake",
     paragraphs: [
-      "Placeholder text — a short description of Sela Lake will appear here.",
+      "Perched high in the Eastern Himalayas at an altitude of around 13,700 feet, Sela Lake, also known as Paradise Lake, is one of the most breathtaking natural wonders in Arunachal Pradesh. Located near Sela Pass, on the road connecting Tawang with Dirang and Bomdila, this pristine glacial lake offers an unforgettable experience of serenity, spirituality, and surreal beauty.",
+      "Sela Lake, surrounded by snow-clad mountains and fluttering prayer flags, is not just a visual spectacle; it’s a sacred site revered by local Buddhist communities and a must-visit stop for every traveller journeying through Tawang’s Himalayan highway.",
     ],
     image: images.tawang.selaLake,
     alt: "Sela Lake",
@@ -124,7 +140,7 @@ const visitingPlaces: {
   {
     title: "Sela Pass",
     paragraphs: [
-      "Placeholder text — a short description of Sela Pass will appear here.",
+      "The Sela Pass (Se La) is a high-altitude mountain pass located on the border between the Tawang and West Kameng districts in the Indian state of Arunachal Pradesh. It has an elevation of 4170 m (13,700 ft) and connects the Indian Buddhist town of Tawang to Dirang and Guwahati. The pass carries the National Highway 13 (previously NH 229), connecting Tawang with the rest of India. The pass supports scarce amounts of vegetation and is usually snow-covered to some extent throughout the year. Sela Lake, near the summit of the pass, is one of approximately 101 lakes in the area that are sacred in Tibetan Buddhism. While Sela Pass does get heavy snowfall in winters, it is usually open throughout the year unless landslides or snow require the pass to be shut down temporarily. Sela pass is one of the highest motorable mountain passes in the world.",
     ],
     image: images.tawang.selaPass,
     alt: "Sela Pass",
@@ -133,9 +149,9 @@ const visitingPlaces: {
   },
   // North of Tawang
   {
-    title: "Penga Teng Tso Lake",
+    title: "Pankang Teng Tso Lake",
     paragraphs: [
-      "Placeholder text — a short description of Penga Teng Tso Lake will appear here.",
+      "Penga Teng Tso Lake—more commonly called P.T. Tso or Pankang Teng Tso—is a high-altitude glacial lake near Tawang in Arunachal Pradesh, India. It is a popular scenic stop on the road toward Bum La Pass, though sources disagree on its exact altitude, so avoid stating a single figure too confidently.",
     ],
     image: images.tawang.pengaTengTso,
     alt: "Penga Teng Tso Lake",
@@ -143,9 +159,9 @@ const visitingPlaces: {
     size: "medium",
   },
   {
-    title: "Sungester Lake",
+    title: "Sangetsar Tso lake",
     paragraphs: [
-      "Placeholder text — a short description of Sungester Lake will appear here.",
+      "Created by falling rocks, boulders and trees in an earthquake, there is a Sangetsar Tso lake (lake is called Tso in Tibetan) that featured Madhuri Dixit (Bollywood actress) in the movie Koyla, as a result this lake is sometimes also called Madhuri lake. The lake is about 20 km from Tawang town, about 7 km beyond the bifurcation of road leading to Bum La Pass.",
     ],
     image: images.tawang.sungesterLake,
     alt: "Sungester Lake",
@@ -155,32 +171,11 @@ const visitingPlaces: {
   {
     title: "Bumla Pass",
     paragraphs: [
-      "Placeholder text — a short description of Bumla Pass will appear here.",
+      "The Bum La Pass (Tibetan: བུམ་ལ་) is a border pass between China's Tsona County in Tibet and India's Tawang district in Arunachal Pradesh.[1] It is 37 km away from the town of Tawang in India's Tawang district and 43 km from the town of Tsona Dzong in China's Tsona County. The pass currently serves as a trading point between Arunachal Pradesh and Tibet.[2] It is also an agreed Border Personnel Meeting Point for the security forces of China and India.",
+      "The road to Bum La is also a historical route, the People's Liberation Army of China invaded India during the 1962 Sino-Indian War. Here in Bum La Pass one of the fiercest battles, the Battle of Bum La Pass, took place in the 1962 Sino-Indian War.",
     ],
     image: images.tawang.bumlaPass,
     alt: "Bumla Pass",
-    imageSide: "right",
-    size: "medium",
-  },
-];
-
-/* ---------- Monpa People and Culture ---------- */
-
-const monpaCulture: {
-  title: string;
-  paragraphs: string[];
-  image: string;
-  alt: string;
-  imageSide: "left" | "right";
-  size: "tall" | "medium" | "short";
-}[] = [
-  {
-    title: "The Monpa People and Culture",
-    paragraphs: [
-      "The Monpas are one of the major tribes of Arunachal Pradesh. The Monpas are Buddhists by religion and Tawang Monastery is the fountainhead of their spiritual lives. They are by and large agriculturists and they have their own distinctive way of clothing themselves, well adapted to the conditions of their environment.",
-    ],
-    image: images.tawang.monpaCulture,
-    alt: "Monpa people in traditional attire",
     imageSide: "right",
     size: "medium",
   },
@@ -198,8 +193,16 @@ const seasonTable: {
   temperature: string;
 }[] = [
   { season: "Summers", months: "March to June", temperature: "5 °C – 22 °C" },
-  { season: "Monsoon", months: "July to September", temperature: "15 °C – 20 °C" },
-  { season: "Winters", months: "November to February", temperature: "2 °C – 10 °C" },
+  {
+    season: "Monsoon",
+    months: "July to September",
+    temperature: "15 °C – 20 °C",
+  },
+  {
+    season: "Winters",
+    months: "November to February",
+    temperature: "2 °C – 10 °C",
+  },
 ];
 
 const seasonDetails: {
@@ -353,7 +356,9 @@ export default function TawangPage() {
         />
         <div className="tawang-hero__overlay" aria-hidden="true" />
         <div className="tawang-hero__content container">
-          <p className="eyebrow tawang-hero__eyebrow">Arunachal Pradesh, India</p>
+          <p className="eyebrow tawang-hero__eyebrow">
+            Arunachal Pradesh, India
+          </p>
           <h1>Tawang</h1>
           <p className="tawang-hero__lede">
             Majestic peaks, quiet lakes and living monastery culture — the
@@ -372,7 +377,10 @@ export default function TawangPage() {
       </section>
 
       {/* Visiting places */}
-      <section className="section section--sage" aria-label="Places to visit around Tawang">
+      <section
+        className="section section--sage"
+        aria-label="Places to visit around Tawang"
+      >
         <div className="container">
           <div className="section-head section-head--center">
             <p className="eyebrow">Explore the region</p>
@@ -389,9 +397,7 @@ export default function TawangPage() {
             <ZigZagBlock key={block.title} block={block} />
           ))}
 
-          <h3 className="tawang-route-label">
-            South-east toward Sela Pass
-          </h3>
+          <h3 className="tawang-route-label">South-east toward Sela Pass</h3>
           {visitingPlaces.slice(3, 7).map((block) => (
             <ZigZagBlock key={block.title} block={block} />
           ))}
@@ -403,17 +409,11 @@ export default function TawangPage() {
         </div>
       </section>
 
-      {/* Monpa People and Culture */}
-      <section className="section" aria-label="The Monpa people and culture">
-        <div className="container">
-          {monpaCulture.map((block) => (
-            <ZigZagBlock key={block.title} block={block} />
-          ))}
-        </div>
-      </section>
-
       {/* Best Time to Visit */}
-      <section className="section section--sage" aria-label="Best time to visit Tawang">
+      <section
+        className="section section--sage"
+        aria-label="Best time to visit Tawang"
+      >
         <div className="container">
           <div className="section-head section-head--center">
             <p className="eyebrow">Plan your trip</p>
@@ -494,7 +494,10 @@ export default function TawangPage() {
       </section>
 
       {/* How to reach */}
-      <section className="section section--sage" aria-label="How to reach Tawang">
+      <section
+        className="section section--sage"
+        aria-label="How to reach Tawang"
+      >
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Getting here</p>
@@ -505,7 +508,10 @@ export default function TawangPage() {
           ))}
 
           <div className="text-center" style={{ marginTop: "var(--space-5)" }}>
-            <p className="lede" style={{ maxWidth: 560, margin: "0 auto 16px" }}>
+            <p
+              className="lede"
+              style={{ maxWidth: 560, margin: "0 auto 16px" }}
+            >
               Dharma Retreat House sits right in this landscape — rest here
               while you explore.
             </p>

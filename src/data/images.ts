@@ -13,8 +13,8 @@ export const images = {
   tawang: {
     hero: "/tawang/tawang-hero.jpg",
     welcomeGate: "/tawang/tawang-welcome.jpg",
-    waterfall1: "/tawang/tawang-waterfall-1.jpg",
-    waterfall2: "/tawang/tawang-waterfall-2.jpg",
+    monks: "/tawang/monks.jpg",
+    town: "/tawang/tawang-town.jpg",
     alcove: "/tawang/tawang-alcove.jpg",
     lake: "/tawang/tawang-lake-1.jpg",
     bridge: "/tawang/tawang-bridge.jpg",

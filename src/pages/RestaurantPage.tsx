@@ -12,17 +12,18 @@ import "./RestaurantPage.css";
 
 const menuHighlights = [
   {
-    name: "Seasonal vegetable thali",
+    name: "Menu Spread:",
     description:
-      "A platter of the day's vegetables, dal, rice and fresh-baked flatbread.",
+      "Steaming hot Rice, Dal Fry, Fresh Seasonal Vegetables, Authentic Local Seasonal Dishes, and Choice of Selected Chicken or Fish dishes.",
   },
   {
-    name: "House sourdough & garden soup",
+    name: "Accompaniments:",
     description: "Warm sourdough with a slow-cooked soup from our garden.",
   },
   {
-    name: "Mountain tea & honey cake",
-    description: "A gentle finish with local honey and handmade cake.",
+    name: "Beverage:",
+    description:
+      "Includes a complimentary cup of hot Tea or Coffee with your meal.",
   },
 ];
 
@@ -35,9 +36,7 @@ export default function RestaurantPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   async function findSlots() {
-    await run(() =>
-      api.getRestaurantSlots({ date, partySize }),
-    );
+    await run(() => api.getRestaurantSlots({ date, partySize }));
   }
 
   const slots = state.kind === "done" ? state.data : null;
@@ -51,14 +50,16 @@ export default function RestaurantPage() {
           <h1>Good food, good purpose</h1>
           <p className="lede">
             Seasonal, locally sourced dishes served in our relaxed dining room.
-            Every meal supports {site.charityName}.
           </p>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: "var(--space-4)" }}>
         <div className="container rest-grid">
-          <div className="rest-photo" aria-label="Placeholder — restaurant interior image">
+          <div
+            className="rest-photo"
+            aria-label="Placeholder — restaurant interior image"
+          >
             <img
               src={images.restaurant.interior}
               alt="Placeholder — here should be a restaurant interior image"
@@ -72,9 +73,8 @@ export default function RestaurantPage() {
               <UtensilsCrossed size={22} aria-hidden="true" /> Our kitchen
             </h2>
             <p className="lede">
-              Our cooks prepare honest food from what the season and nearby
-              farms offer. Vegetarian dishes are a speciality, and the daily
-              thali is a guest favourite.
+              Enjoy a delicious, freshly cooked buffet dinner prepared with care
+              for our staying guests.
             </p>
             <h3 className="mt-2">Menu highlights</h3>
             <ul className="rest-menu">
@@ -86,15 +86,18 @@ export default function RestaurantPage() {
               ))}
             </ul>
             <p className="rest-policy">
-              <Clock size={16} aria-hidden="true" /> Lunch 12:00–14:00 · Dinner
-              18:00–21:00
+              <Clock size={16} aria-hidden="true" /> Served daily from 7:00 PM
+              to 9:00 PM (Ground Floor Dining)
             </p>
             <p className="rest-policy">{policies.restaurantCancellation}</p>
           </div>
         </div>
       </section>
 
-      <section className="section section--sage" aria-labelledby="reserve-title">
+      <section
+        className="section section--sage"
+        aria-labelledby="reserve-title"
+      >
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Reservations</span>
@@ -173,7 +176,11 @@ export default function RestaurantPage() {
             <div className="card text-center mt-2" role="alert">
               <h3>We couldn't load times</h3>
               <p className="lede">{state.message}</p>
-              <button type="button" className="btn btn--primary" onClick={findSlots}>
+              <button
+                type="button"
+                className="btn btn--primary"
+                onClick={findSlots}
+              >
                 Try again
               </button>
             </div>
