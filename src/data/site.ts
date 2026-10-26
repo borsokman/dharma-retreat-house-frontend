@@ -20,9 +20,10 @@ export const site = {
 
 export const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Rooms & Suites", to: "/stay" },
+  { label: "Rooms", to: "/stay" },
   { label: "Buffet", to: "/buffet" },
   { label: "Explore Tawang", to: "/tawang" },
+  { label: "Dharma Coffee House & Library", to: "/partner" },
   { label: "Our Mission", to: "/our-mission" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },

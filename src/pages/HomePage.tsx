@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { Wifi, Tv, Coffee, ParkingSquare, ArrowRight } from "lucide-react";
 import { BookingWidget } from "../components/BookingWidget";
 import { images } from "../data/images";
 import { site } from "../data/site";
@@ -57,6 +57,29 @@ const navigationCards: NavigationCard[] = [
   },
 ];
 
+const amenities = [
+  {
+    icon: Wifi,
+    title: "High-Speed Wi-Fi",
+    body: "Complimentary high-speed internet throughout all guest rooms & lounge areas.",
+  },
+  {
+    icon: Tv,
+    title: '55" Google TV',
+    body: "In-room smart streaming entertainment for relaxing mountain evenings.",
+  },
+  {
+    icon: Coffee,
+    title: "Home-Style Breakfast",
+    body: "Delicious hot, complimentary home-style breakfast prepared fresh daily.",
+  },
+  {
+    icon: ParkingSquare,
+    title: "Private Guest Parking",
+    body: "Ample, safe, and convenient private vehicle parking on premises.",
+  },
+];
+
 const reviewsUrl =
   "https://www.google.com/maps/place/Dharma+Retreat+House/@27.594589,91.8584247,17z/data=!4m12!3m11!1s0x375cf5c9ed88412b:0xd486e28ff3387c18!5m3!1s2026-10-26!4m1!1i2!8m2!3d27.594589!4d91.8609996!9m1!1b1!16s%2Fg%2F11yvds_jj7?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D";
 
@@ -64,7 +87,13 @@ function NavigationCardView({ card }: { card: NavigationCard }) {
   const content = (
     <>
       <div className="home-nav-card__image">
-        <img src={card.image} alt={card.alt} loading="lazy" width="940" height="650" />
+        <img
+          src={card.image}
+          alt={card.alt}
+          loading="lazy"
+          width="940"
+          height="650"
+        />
       </div>
       <div className="home-nav-card__body">
         <h2>{card.title}</h2>
@@ -85,7 +114,9 @@ function NavigationCardView({ card }: { card: NavigationCard }) {
       {content}
     </Link>
   ) : (
-    <article className="home-nav-card card home-nav-card--coming-soon">{content}</article>
+    <article className="home-nav-card card home-nav-card--coming-soon">
+      {content}
+    </article>
   );
 }
 
@@ -109,8 +140,8 @@ export default function HomePage() {
             <br />A purpose beyond it.
           </h1>
           <p className="hero__lede animate-fade-up">
-            Enjoy a welcoming place to stay and dine, while supporting a
-            meaningful cause — every night here helps {site.charityName} thrive.
+            A tranquil, boutique homestay experience combining authentic
+            Himalayan warmth with modern comforts and scenic mountain vistas.
           </p>
           <div className="animate-fade-up">
             <BookingWidget variant="hero" />
@@ -119,18 +150,35 @@ export default function HomePage() {
       </section>
 
       {/* ---------- Navigation cards ---------- */}
-      <section className="section home-navigation" aria-labelledby="home-navigation-title">
+      <section
+        className="section home-navigation"
+        aria-labelledby="home-navigation-title"
+      >
         <div className="container">
           <div className="section-head section-head--center">
-            <span className="eyebrow">Welcome to Dharma</span>
-            <h2 id="home-navigation-title">Find your way around</h2>
-            <p className="lede">
-              Stay, eat, explore and discover the purpose behind the house.
-            </p>
+            <span className="eyebrow">Find Your Way Around</span>
           </div>
           <div className="home-nav-grid">
             {navigationCards.map((card) => (
               <NavigationCardView key={card.title} card={card} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Amenities ---------- */}
+      <section className="section" aria-labelledby="amenities-title">
+        <div className="container">
+          <div className="section-head section-head--center">
+            <span className="eyebrow">Homestay Comforts</span>
+          </div>
+          <div className="amenities">
+            {amenities.map((a) => (
+              <article key={a.title} className="card card--hover amenity">
+                <a.icon size={26} aria-hidden="true" />
+                <h3>{a.title}</h3>
+                <p>{a.body}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -141,10 +189,6 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head section-head--center">
             <span className="eyebrow">Guest words</span>
-            <h2 id="quotes-title">What guests say</h2>
-            <p className="lede">
-              Read more experiences from guests who have stayed with us.
-            </p>
           </div>
           <div className="quotes">
             <figure className="card card--hover quote">
@@ -180,7 +224,8 @@ export default function HomePage() {
               target="_blank"
               rel="noreferrer"
             >
-              Read all Google reviews <ArrowRight size={16} aria-hidden="true" />
+              Read all Google reviews{" "}
+              <ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
