@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const iconUrl = `${import.meta.env.BASE_URL}home-icon.jpg`;
+const iconUrl = `${import.meta.env.BASE_URL}homepage-icon.svg`;
 
 export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const color = variant === "light" ? "#F9F6F0" : "var(--text)";
@@ -13,14 +13,10 @@ export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
       <img
         src={iconUrl}
         alt=""
-        width={34}
-        height={34}
+        width={36}
+        height={36}
         aria-hidden="true"
-        style={{
-          borderRadius: 8,
-          objectFit: "cover",
-          flexShrink: 0,
-        }}
+        style={{ flexShrink: 0 }}
       />
       <span
         style={{
