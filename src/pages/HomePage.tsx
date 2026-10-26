@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Wifi, Tv, Coffee, ParkingSquare, ArrowRight } from "lucide-react";
 import { BookingWidget } from "../components/BookingWidget";
 import { images } from "../data/images";
-import { site } from "../data/site";
+// import { site } from "../data/site";
 import "./HomePage.css";
 
 type NavigationCard = {
