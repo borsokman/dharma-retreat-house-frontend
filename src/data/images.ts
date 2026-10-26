@@ -10,7 +10,8 @@ const PLACEHOLDER =
 const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export const images = {
-  hero: publicAsset("dharmahouse-hero-light.jpg"),
+  heroLight: publicAsset("dharmahouse-hero-light.jpg"),
+  heroDark: publicAsset("dharmahouse-hero-dark.jpg"),
   tawang: {
     hero: publicAsset("tawang/tawang-hero.jpg"),
     welcomeGate: publicAsset("tawang/tawang-welcome.jpg"),

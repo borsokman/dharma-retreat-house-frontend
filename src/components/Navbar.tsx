@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../data/site";
 import { Logo } from "./Logo";
+import type { Theme } from "../hooks/useTheme";
 import "./Navbar.css";
 
-export function Navbar() {
+type NavbarProps = {
+  theme: Theme;
+  onToggleTheme: () => void;
+};
+
+export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -46,20 +52,48 @@ export function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <button
+            type="button"
+            className="nav__theme"
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            title={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            onClick={onToggleTheme}
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <Link to="/stay" className="btn btn--sunset btn--sm">
             Book Now
           </Link>
         </nav>
-        <button
-          type="button"
-          className="nav__toggle"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        <div className="nav__actions">
+          <button
+            type="button"
+            className="nav__theme nav__theme--mobile"
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            title={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            onClick={onToggleTheme}
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            type="button"
+            className="nav__toggle"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
       {open && (
         <div id="mobile-menu" className="nav__mobile">

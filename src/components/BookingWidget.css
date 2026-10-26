@@ -1,9 +1,13 @@
 .widget {
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--widget-bg, rgba(255, 255, 255, 0.96));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
   width: 100%;
+}
+
+[data-theme="dark"] .widget {
+  --widget-bg: rgba(35, 42, 36, 0.94);
 }
 
 .widget--hero {
@@ -28,7 +32,7 @@
   cursor: pointer;
   border-radius: 999px;
   padding: 11px 26px;
-  background: var(--sage);
+  background: var(--surface-muted);
   color: var(--olive);
   transition:
     background-color var(--transition),

@@ -11,6 +11,10 @@
   animation: fade-up 300ms var(--ease-organic) both;
 }
 
+[data-theme="dark"] .modal__backdrop {
+  background: rgba(0, 0, 0, 0.62);
+}
+
 .modal {
   width: 100%;
   max-width: 560px;

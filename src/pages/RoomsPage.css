@@ -9,8 +9,8 @@
   flex-direction: column;
   overflow: hidden;
   text-align: left;
-  background: var(--surface, #fff);
-  border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
 .room-tile__img {

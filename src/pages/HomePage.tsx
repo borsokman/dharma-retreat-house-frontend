@@ -126,13 +126,22 @@ export default function HomePage() {
       {/* ---------- Full-screen hero ---------- */}
       <section className="hero" aria-label="Welcome">
         <picture>
-          <source media="(max-width: 760px)" srcSet={`${images.hero}?w=900`} />
+          <source
+            media="(max-width: 760px)"
+            srcSet={`${images.heroLight}?w=900`}
+          />
           <img
-            src={images.hero}
+            src={images.heroLight}
             alt="Dharma Retreat House lit up in the evening"
-            className="hero__img"
+            className="hero__img hero__img--light"
           />
         </picture>
+        <img
+          src={images.heroDark}
+          alt=""
+          aria-hidden="true"
+          className="hero__img hero__img--dark"
+        />
         <div className="hero__overlay" aria-hidden="true" />
         <div className="hero__content container">
           <h1 className="hero__title animate-fade-up">

@@ -18,9 +18,13 @@
 }
 
 .nav:not(.nav--overlay) {
-  background: rgba(249, 246, 240, 0.92);
+  background: var(--nav-bg, rgba(249, 246, 240, 0.92));
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .nav:not(.nav--overlay) {
+  --nav-bg: rgba(26, 31, 27, 0.9);
 }
 
 .nav__inner {
@@ -61,6 +65,47 @@
   height: 2.5px;
   border-radius: 999px;
   background: var(--sunset);
+}
+
+.nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 8px;
+  border-radius: 12px;
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.nav__theme:hover {
+  background: var(--surface-muted);
+  color: var(--forest);
+  transform: rotate(-12deg);
+}
+
+.nav--overlay .nav__theme {
+  color: #f9f6f0;
+}
+
+.nav--overlay .nav__theme:hover {
+  background: rgba(249, 246, 240, 0.12);
+  color: #f9f6f0;
+}
+
+.nav__theme--mobile {
+  display: inline-flex;
 }
 
 .nav__toggle {
@@ -121,7 +166,8 @@
     display: flex;
   }
   .nav__toggle,
-  .nav__mobile {
+  .nav__mobile,
+  .nav__theme--mobile {
     display: none;
   }
 }
