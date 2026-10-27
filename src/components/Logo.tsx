@@ -13,8 +13,8 @@ export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
       <img
         src={iconUrl}
         alt=""
-        width={36}
-        height={36}
+        width={70}
+        height={70}
         aria-hidden="true"
         style={{ flexShrink: 0 }}
       />

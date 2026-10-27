@@ -7,7 +7,6 @@ import "./HomePage.css";
 
 type NavigationCard = {
   title: string;
-  description: string;
   image: string;
   alt: string;
   to?: string;
@@ -16,41 +15,35 @@ type NavigationCard = {
 const navigationCards: NavigationCard[] = [
   {
     title: "Rooms & Suites",
-    description: "Rest well in a quiet room surrounded by mountain air.",
     image: images.rooms.luxurySuite,
     alt: "Luxury suite at Dharma Retreat House",
     to: "/stay",
   },
   {
     title: "Buffet",
-    description: "Enjoy generous, home-style food prepared with care.",
     image: images.buffet.interior,
     alt: "Freshly prepared buffet at Dharma Retreat House",
     to: "/buffet",
   },
   {
     title: "Explore Tawang",
-    description: "Discover monasteries, lakes, waterfalls and high passes.",
     image: images.tawang.hero,
     alt: "Mountain landscape in Tawang",
     to: "/tawang",
   },
   {
-    title: "Dharma Coffee House",
-    description: "A warm place for coffee, conversation and quiet moments.",
+    title: "Dharma Coffee House & Library",
     image: images.gallery.gardenPath,
     alt: "Placeholder image for Dharma Coffee House",
   },
   {
     title: "Gallery",
-    description: "Take a glimpse at the house and the landscape around it.",
     image: images.gallery.monastery,
     alt: "Placeholder image for the gallery",
     to: "/gallery",
   },
   {
     title: "Our Mission",
-    description: "See how every stay helps support Tashol Tengyur School.",
     image: images.mission.classroom,
     alt: "Placeholder image for the school mission",
     to: "/our-mission",
@@ -97,14 +90,6 @@ function NavigationCardView({ card }: { card: NavigationCard }) {
       </div>
       <div className="home-nav-card__body">
         <h2>{card.title}</h2>
-        <p>{card.description}</p>
-        {card.to ? (
-          <span className="home-nav-card__action">
-            Explore <ArrowRight size={16} aria-hidden="true" />
-          </span>
-        ) : (
-          <span className="home-nav-card__coming-soon">Coming soon</span>
-        )}
       </div>
     </>
   );

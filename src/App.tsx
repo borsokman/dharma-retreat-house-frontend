@@ -24,8 +24,12 @@ export default function App() {
           <Route path="/stay/:slug" element={<RoomDetailsPage />} />
           <Route path="/buffet" element={<BuffetPage />} />
           <Route path="/tawang" element={<TawangPage />} />
-          <Route path="/our-mission" element={<MissionPage />} />
+          {/* <Route
+            path="/dharma-coffee-house"
+            element={<DharmaCoffeeHousePage />}
+          /> */}
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/our-mission" element={<MissionPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/manage-booking" element={<ManageBookingPage />} />
           <Route path="*" element={<NotFoundPage />} />

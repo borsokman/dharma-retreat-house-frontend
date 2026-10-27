@@ -80,7 +80,7 @@
   color: rgba(249, 246, 240, 0.92);
   font-size: 1.12rem;
   max-width: 52ch;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .hero__content .widget {
@@ -103,13 +103,13 @@
 
 /* ---------- Navigation cards ---------- */
 .home-navigation {
-  background: var(--cream);
+  background: transparent;
 }
 
 .home-nav-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .home-nav-card {
@@ -118,6 +118,9 @@
   padding: 0;
   color: var(--text);
   text-decoration: none;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .home-nav-card:hover {
@@ -127,7 +130,8 @@
 .home-nav-card__image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--sage);
+  background: transparent;
+  border-radius: var(--radius-sm, 8px);
 }
 
 .home-nav-card__image img {
@@ -143,12 +147,13 @@
 }
 
 .home-nav-card__body {
-  padding: var(--space-3);
+  padding: var(--space-1) 0 0;
 }
 
 .home-nav-card__body h2 {
   font-size: 1.45rem;
-  margin-bottom: 8px;
+  margin: 0;
+  text-align: center;
 }
 
 .home-nav-card__body p {
@@ -157,30 +162,12 @@
   margin: 0 0 var(--space-2);
 }
 
-.home-nav-card__action,
-.home-nav-card__coming-soon {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--forest);
-  font-weight: 800;
-  font-size: 0.92rem;
-}
-
 .home-nav-card__action svg {
   transition: transform var(--transition);
 }
 
 .home-nav-card:hover .home-nav-card__action svg {
   transform: translateX(4px);
-}
-
-.home-nav-card__coming-soon {
-  color: var(--text-faint);
-}
-
-.home-nav-card--coming-soon {
-  cursor: default;
 }
 
 @media (min-width: 700px) {
@@ -236,12 +223,12 @@
 
 /* ---------- Reviews ---------- */
 .home-reviews__link {
-  margin-top: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .quotes {
   display: grid;
-  gap: var(--space-0.5);
+  gap: var(--space-1);
 }
 
 .quote blockquote {

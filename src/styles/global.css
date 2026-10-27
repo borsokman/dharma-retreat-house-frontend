@@ -30,7 +30,8 @@
   --shadow-sm: 0 4px 16px rgba(44, 36, 22, 0.08);
   --shadow-md: 0 8px 32px rgba(44, 36, 22, 0.1);
   --shadow-lg: 0 16px 48px rgba(44, 36, 22, 0.14);
-  --shadow-inset: inset 2px 2px 6px rgba(255, 255, 255, 0.7),
+  --shadow-inset:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.7),
     inset -2px -2px 6px rgba(44, 36, 22, 0.06);
 
   /* Organic radii */
@@ -91,7 +92,8 @@
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.32);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.38);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-inset: inset 2px 2px 6px rgba(255, 255, 255, 0.06),
+  --shadow-inset:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.06),
     inset -2px -2px 6px rgba(0, 0, 0, 0.2);
 
   --surface: #232a24;
@@ -478,15 +480,27 @@ a:hover {
 }
 
 .blob--sage {
-  background: radial-gradient(circle at 30% 30%, rgba(232, 237, 229, 0.9), rgba(232, 237, 229, 0));
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(232, 237, 229, 0.9),
+    rgba(232, 237, 229, 0)
+  );
 }
 
 .blob--water {
-  background: radial-gradient(circle at 30% 30%, rgba(126, 184, 180, 0.25), rgba(126, 184, 180, 0));
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(126, 184, 180, 0.25),
+    rgba(126, 184, 180, 0)
+  );
 }
 
 .blob--terracotta {
-  background: radial-gradient(circle at 30% 30%, rgba(198, 123, 92, 0.18), rgba(198, 123, 92, 0));
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(198, 123, 92, 0.18),
+    rgba(198, 123, 92, 0)
+  );
 }
 
 /* ---------- Wave divider ---------- */
