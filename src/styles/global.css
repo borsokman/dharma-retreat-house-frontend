@@ -8,13 +8,21 @@
   --sage: #e8ede5;
 
   /* Primary */
-  --forest: #2d5a3d;
-  --forest-deep: #1f422c;
+
+  --forest: #79a986;
+  --forest-deep: #79a986;
   --olive: #5a7247;
 
   /* Secondary */
   --terracotta: #c67b5c;
   --clay: #b8860b;
+
+  /* Footer */
+  --footer-bg: #1f422c;
+  --footer-text: rgba(0, 0, 0, 0.85);
+  --footer-muted: rgba(8, 8, 8, 0.6);
+  --footer-hover: #fff;
+  --footer-border: rgba(249, 246, 240, 0.15);
 
   /* Accents */
   --sunset: #e07b53;
@@ -35,6 +43,7 @@
     inset -2px -2px 6px rgba(44, 36, 22, 0.06);
 
   /* Organic radii */
+  --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 32px;
   --radius-xl: 40px;
@@ -43,15 +52,15 @@
   --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-sans: "Nunito", "Segoe UI", system-ui, sans-serif;
 
-  /* Spacing (8px system) */
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 128px;
+  /* Spacing (4px system) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
 
   /* Motion */
   --ease-organic: cubic-bezier(0.45, 0, 0.35, 1);
@@ -74,9 +83,15 @@
   --cream: #1a1f1b;
   --sage: #232a24;
 
-  --forest: #7fa68a;
-  --forest-deep: #6b9277;
+  --forest: #2d5a3d;
+  --forest-deep: #1f422c;
   --olive: #9bb583;
+
+  --footer-bg: #1f422c;
+  --footer-text: rgba(255, 255, 255, 0.85);
+  --footer-muted: rgba(222, 216, 216, 0.6);
+  --footer-hover: #fff;
+  --footer-border: rgba(249, 246, 240, 0.15);
 
   --terracotta: #d49a7c;
   --clay: #d4a949;
@@ -367,9 +382,9 @@ a:hover {
 /* ---------- Cards ---------- */
 .card {
   background: var(--surface);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
-  padding: var(--space-4);
+  padding: var(--space-3);
   transition:
     transform var(--transition),
     box-shadow var(--transition);

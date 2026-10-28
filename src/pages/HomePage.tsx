@@ -149,9 +149,6 @@ export default function HomePage() {
         aria-labelledby="home-navigation-title"
       >
         <div className="container">
-          <div className="section-head section-head--center">
-            <span className="eyebrow">Find Your Way Around</span>
-          </div>
           <div className="home-nav-grid">
             {navigationCards.map((card) => (
               <NavigationCardView key={card.title} card={card} />
@@ -169,7 +166,7 @@ export default function HomePage() {
           <div className="amenities">
             {amenities.map((a) => (
               <article key={a.title} className="card card--hover amenity">
-                <a.icon size={26} aria-hidden="true" />
+                <a.icon size={35} aria-hidden="true" />
                 <h3>{a.title}</h3>
                 <p>{a.body}</p>
               </article>
@@ -195,12 +192,6 @@ export default function HomePage() {
             </figure>
             <figure className="card card--hover quote">
               <blockquote>
-                "Great ambience, great hospitality and most amazing rooms ever."
-              </blockquote>
-              <figcaption>Kunchok Dolma, Nepal</figcaption>
-            </figure>
-            <figure className="card card--hover quote">
-              <blockquote>
                 "Had a wonderful stay at Dharma Retreat House! Everything was
                 excellent—the rooms were clean and comfortable, the food was
                 delicious, and the staff were extremely kind and welcoming. The
@@ -209,6 +200,12 @@ export default function HomePage() {
                 Would definitely love to visit again. ❤️"
               </blockquote>
               <figcaption>Rinchin Jangmu, India</figcaption>
+            </figure>
+            <figure className="card card--hover quote">
+              <blockquote>
+                "Great ambience, great hospitality and most amazing rooms ever."
+              </blockquote>
+              <figcaption>Kunchok Dolma, Nepal</figcaption>
             </figure>
           </div>
           <div className="text-center home-reviews__link">
@@ -219,22 +216,18 @@ export default function HomePage() {
               rel="noreferrer"
             >
               Read all Google reviews{" "}
-              <ArrowRight size={16} aria-hidden="true" />
+              <ArrowRight size={19} aria-hidden="true" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* ---------- Contact CTA ---------- */}
+      {/* ---------- Book Now ---------- */}
       <section className="section" aria-labelledby="cta-title">
         <div className="container text-center">
           <h2 id="cta-title">Come and stay</h2>
-          <p className="lede" style={{ maxWidth: 560, margin: "0 auto 24px" }}>
-            Questions about rooms, the buffet or something else? We're happy to
-            help.
-          </p>
-          <Link to="/contact" className="btn btn--primary">
-            Contact us
+          <Link to="/stay" className="btn btn--primary">
+            Book Now
           </Link>
         </div>
       </section>
