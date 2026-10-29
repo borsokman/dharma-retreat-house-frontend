@@ -35,7 +35,6 @@ export const images = {
     sungesterLake: publicAsset("tawang/sangetsar-lake.jpg"),
     bumlaPass: publicAsset("tawang/bumla-pass.jpg"),
     monpaCulture: publicAsset("tawang/monpa-people.jpg"),
-    bestTime: publicAsset("tawang/tawang-best-time.jpg"),
   },
   rooms: {
     gardenDouble: PLACEHOLDER,

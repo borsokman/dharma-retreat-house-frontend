@@ -182,10 +182,6 @@ const visitingPlaces: {
 
 /* ---------- Best Time to Visit ---------- */
 
-const bestTimeParagraphs: string[] = [
-  "Tawang is a town in Arunachal Pradesh, profusely bestowed with pristine nature and a vibrant ethnicity. There is a mesh of India and China which can be witnessed during your trip to Tawang. The popular Tawang Monastery plays a special role in attracting different travellers here. The best time to visit Tawang is between March and October; for season-wise details of the town, read further.",
-];
-
 const seasonTable: {
   season: string;
   months: string;
@@ -418,24 +414,6 @@ export default function TawangPage() {
             <p className="eyebrow">Plan your trip</p>
             <h2>Best time to visit Tawang</h2>
           </div>
-
-          <div className="best-time-layout">
-            <div className="best-time-image">
-              <img
-                src={images.tawang.bestTime}
-                alt="Scenic Tawang landscape showing the best season to visit"
-                loading="lazy"
-                width="940"
-                height="650"
-              />
-            </div>
-            <div className="best-time-intro">
-              {bestTimeParagraphs.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
-              ))}
-            </div>
-          </div>
-
           <div className="season-table-wrap">
             <table className="season-table">
               <thead>
@@ -456,7 +434,6 @@ export default function TawangPage() {
               </tbody>
             </table>
           </div>
-
           <div className="season-details">
             {seasonDetails.map((s) => (
               <div className="season-detail" key={s.heading}>
